@@ -34,3 +34,26 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## Steps
+- install Nextjs
+$ npx create-next-app@latest
+√ What is your project named? ... sommaire-app
+√ Would you like to use TypeScript? ... No / Yes
+√ Would you like to use ESLint? ... No / Yes
+√ Would you like to use Tailwind CSS? ... No / Yes
+√ Would you like your code inside a `src/` directory? ... No / Yes
+√ Would you like to use App Router? (recommended) ... No / Yes
+√ Would you like to use Turbopack for `next dev`? ... No / Yes
+√ Would you like to customize the import alias (`@/*` by default)? ... No / Yes
+Creating a new Next.js app in C:\Users\ganil\Documents\Web_Design\React\Projects\sommaire-app.  
+
+- Link for cheatsheet:
+[](https://www.notion.so/AI-SaaS-app-Sommaire-Cheatsheet-2160711b4ff1800ba623d55da33ec92e)
+
+- Link to install Shadcn
+[](https://ui.shadcn.com/docs/installation/next)
+
+npx shadcn@latest init # to populate app/globals.css
+
+npx shadcn@latest add button # to customize buttons 
