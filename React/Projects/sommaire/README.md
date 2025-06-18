@@ -83,4 +83,30 @@ Then try to install the ESLint plugin again:
 ```bash
 npm install -D eslint-plugin-tailwindcss
 ```
+---
 
+### Upgrade Tailwindcss
+npx @tailwindcss/upgrade
+
+>Note: if there any issues;
+Remove any lines that look like this: in the app/globals.css
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import 'tailwindcss/base'; /* Or similar imports */
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+@import 'tailwindcss'; /* This is the specific one mentioned in your error */
+```
+
+In postcss.config.mjs file
+```js
+// postcss.config.mjs
+export default {
+  plugins: {
+    tailwindcss: {}, // This enables Tailwind CSS v4
+    autoprefixer: {},
+  },
+};
+```
