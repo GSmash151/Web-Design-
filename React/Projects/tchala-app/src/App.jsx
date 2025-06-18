@@ -1,46 +1,67 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg';
-import viteLogo from './assets/vite.svg';
-import './App.css'
+// src/App.jsx
+import React from 'react';
+import './App.css'; // Keep this for now
+import { useAuth } from './contexts/AuthContext'; // Path already updated, should be correct
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 
-// import firebase from './services/firebase'; 
-// Import your Firebase configuration if needed
-// Import the custom hook to access auth context
-import {useAuth} from './context/AuthContext'; 
-// Import the Login component
-import Login from './components/Auth/Login.jsx'; 
-// Import the Signup component
-import Signup from './components/Auth/Signup.jsx'; 
+// Import your new PAGE components from src/pages/auth
+import LoginPage from './pages/auth/LoginPage'; // Correct path for LoginPage
+import SignupPage from './pages/auth/SignupPage'; // Correct path for SignupPage
 
 function App() {
- const { currentUser, loading, logout } = useAuth(); // Get the current user and loading state from auth context
+  const { currentUser, loading, logout } = useAuth();
 
- if (loading) {
-   return <div>Loading authentication state...</div>; // Show a loading message while auth state is being determined
- }
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center h-screen bg-gray-900 text-white">
+        Loading authentication state...
+      </div>
+    );
+  }
 
- return (
-  <div className="App">
-    <header className="App-header">
-      <h1>Welcome to Tchala Kriket</h1>
-    </header>
-    <main>
-      {currentUser ? (
-        <div>
-          <p>Welcome, {currentUser.email}!</p>
-          <button onClick={logout}>Logout</button> {/* Button to log out the user */}
-        </div>
-      ) : (
-        <div>
-          <p>Please log in or sign up to continue.</p>        
-          <Login /> 
-          <hr />
-          <Signup />
-        </div>
-      )}
-    </main>
-  </div>
- );
+  return (
+    <Router>
+      <div className="min-h-screen bg-gray-900 text-white">
+        <Routes>
+          {/* Route for Login Page */}
+          <Route
+            path="/login"
+            element={currentUser ? <Navigate to="/" replace /> : <LoginPage />}
+          />
+
+          {/* Route for Signup Page */}
+          <Route
+            path="/signup"
+            element={currentUser ? <Navigate to="/" replace /> : <SignupPage />}
+          />
+
+          {/* Protected Route for Home/Dashboard */}
+          <Route
+            path="/"
+            element={
+              currentUser ? (
+                <div className="p-4">
+                  <p className="text-xl">Welcome, {currentUser.email}!</p>
+                  <button
+                    onClick={logout}
+                    className="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full mt-4"
+                  >
+                    Logout
+                  </button>
+                  <div className="p-4">
+                    <h2 className="text-2xl font-bold">Tchala App Dashboard</h2>
+                    <p>This is where your main lottery app features will go.</p>
+                  </div>
+                </div>
+              ) : (
+                <Navigate to="/login" replace />
+              )
+            }
+          />
+        </Routes>
+      </div>
+    </Router>
+  );
 }
 
-export default App
+export default App;

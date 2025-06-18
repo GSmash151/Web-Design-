@@ -11,7 +11,7 @@ import {
     GoogleAuthProvider,
     GithubAuthProvider,
 } from 'firebase/auth';
-import { auth } from './firebase'; // Import your Firebase auth instance
+import { auth } from '../config/firebase'; // Import your Firebase auth instance
 
 // Function to register a new user
 export const registerUser = async (email, password) => {
