@@ -1,11 +1,25 @@
 //Imports:
+import useMovieList from "../../hooks/useMovies"
+import MoviesCard from "./MoviesCard";
 
+// Component: MovieList
+// Description: Displays a list of movies fetched from the API.
 const MovieList = () => {
+    const { movieList } = useMovieList();
+    console.log(movieList);
   return (
-    <div>
-      movie list 
+    <div className="p-3 mb-4">
+      <h1 className="text-4xl font-semibold p-5 py-6">Movies</h1>
+      {/* Grid layout for movie cards */}
+        <div className="grid lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-2 gap-y-2">      
+           {movieList?.map((movieList) => (
+            <div key={movieList.id}>
+                <MoviesCard movieResult={movieList} />
+            </div>
+        ))}
+      </div>
     </div>
-  )
+  );
 }
 
 export default MovieList

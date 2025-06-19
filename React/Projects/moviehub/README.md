@@ -303,7 +303,30 @@ export default AllRoutes
 
 - create a src/components/ui/MovieList.tsx
 - create a src/components/ui/TvMovieList.tsx
-- create a src/hooks/useMovies.ts
+
+#### create a src/hooks/useMovies.ts
+```ts
+// src/hooks/useMovies.ts
+// Description: Custom hook to fetch a list of movies from an API.
+
+// Import:
+
+import apiClients from "../services/api-clients"
+
+const useMovieList = () => {
+    const fetchMovieList = async () => {
+        try {
+            await apiClients.get('discover/movie');
+        } catch (error) {
+
+        }
+    };
+
+    return { fetchMovieList };
+}
+
+export default useMovieList;
+```
 
 ### Get the API Key from (https://www.themoviedb.org/settings/api)then go to (https://developer.themoviedb.org/reference/)
 
@@ -312,3 +335,20 @@ export default AllRoutes
 npm i axios
 ```
 
+- Create a .env file to store the api key 
+#### Create a src/services/api.clients.ts file to pass the api_key
+```ts
+import axios from 'axios';
+
+export default axios.create({
+    baseURL:'https://api.themoviedb.org/3',
+    params: {
+        api_key: import.meta.env.VITE_TMDB_API_KEY,
+    },
+})
+```
+After editing `useMovies.ts` file create a `src/components/ui/MovieCard.tsx` file 
+- Install Card from (https://ui.shadcn.com/docs/components/card)
+```bash
+npx shadcn@latest add card
+```
