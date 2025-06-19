@@ -247,3 +247,68 @@ Input.displayName = "Input"
 export { Input }
 ```
 
+- Edit main.tsx file
+```tsx
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
+import './index.css'
+import App from './App.tsx'
+import { BrowserRouter } from 'react-router'
+
+createRoot(document.getElementById('root')!).render(
+  <StrictMode>
+    <BrowserRouter> <--- Here
+     <App />
+    </BrowserRouter>
+  </StrictMode>,
+)
+
+```
+
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+and at the bottom:
+```tsx
+@layer base {
+  * {
+    @apply border-border;
+    font-family: "Montserrat", sans-serif;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+```
+
+### Create src/routes/AllRoutes.tsx
+```tsx
+// Imports: 
+import { Route, Routes } from "react-router";
+import MovieList from "../components/ui/MovieList";
+import TvShowList from "../components/ui/TvShowList";
+
+const AllRoutes = () => {
+  return (
+    <Routes>
+      {/* <Route path="/" element /> */}
+        <Route path="/movies" element={<MovieList />} /> <--- Movie List
+        <Route path="/tvshows" element={<TvShowList />} /> <--- Tv Show List
+    </Routes>
+  );
+}
+
+export default AllRoutes
+```
+
+- create a src/components/ui/MovieList.tsx
+- create a src/components/ui/TvMovieList.tsx
+- create a src/hooks/useMovies.ts
+
+### Get the API Key from (https://www.themoviedb.org/settings/api)then go to (https://developer.themoviedb.org/reference/)
+
+- Install Axios for HTTP client (https://www.npmjs.com/package/axios)
+```bash
+npm i axios
+```
+

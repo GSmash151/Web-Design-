@@ -1,5 +1,6 @@
 import logo from "../../assets/images/logo.png";
 import { Input } from "./input";
+import { Link } from "react-router-dom";
 
 export const Navbar = () => {
   return (
@@ -16,6 +17,17 @@ export const Navbar = () => {
             className="border-gray-500 rounded-2xl md:w-fit sm:w-[30vw]" 
             />
         </form>
+        <div className="md:block sm:hidden" >
+            <div className="flex gap-6 items-center" >
+                <div>Action</div>
+                <Link to = {'/movies'} >
+                <div>Movies</div>                
+                </Link>
+                <Link to = {'/tvshows'} >
+                <div>TV Shows</div> 
+                </Link>                
+            </div>
+        </div>
     </div>
     </div>
   )
