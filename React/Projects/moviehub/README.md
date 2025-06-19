@@ -207,4 +207,43 @@ You may now add components.
 npx shadcn@latest add button
 ```
 
+- Install React Router (https://reactrouter.com/start/declarative/installation)
+```bash
+npm install react-router@6 react-router-dom@6
+or
+npm i react-router
+```
+
+- Build `Navbar.tsx` in src/components/ui/
+after add the logo to assets/image, start building the search bar then go to (https://ui.shadcn.com/docs/components/input)
+```bash
+npx shadcn@latest add input
+```
+Fix the function in /src/components/input.tsx
+```tsx
+import * as React from "react"
+
+const Input = React.forwardRef<HTMLInputElement, React.ComponentProps<"input">>(
+  // Here
+  ({ className, type, ...props }, ref) => {
+    function cn(...classes: (string | undefined | false | null)[]): string {
+      return classes.filter(Boolean).join(" ");
+    }
+    return (
+      <input
+        type={type}
+        className={cn(
+          "flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm",
+          className
+        )}
+        ref={ref}
+        {...props}
+      />
+    )
+  }
+)
+Input.displayName = "Input"
+
+export { Input }
+```
 
