@@ -1,14 +1,7 @@
 // Imports: 
 import {Card, CardContent} from '../ui/card'
+import type { TvShowResult } from '../../hooks/useTvShows'
 
-
-// Define or import the TvShowResult type
-interface TvShowResult {
-    poster_path: string;
-    title?: string;
-    name?: string;
-    // Add other fields as needed
-}
 
 interface Props {
     tvShowResult: TvShowResult
@@ -24,12 +17,12 @@ const TvShowCard: React.FC<Props> = ({ tvShowResult }) => {
                 className="hover:opacity-80 transition-all"
                 />
                 <h1 className="mt-3 text-lg font-semibold ">
-                  {tvShowResult.title ?tvShowResult.title : tvShowResult.name}
+                  {tvShowResult.title ? tvShowResult.title : tvShowResult.name}
                 </h1>
         </div>
     </CardContent>
    </Card>
   )
-}
+} 
 
 export default TvShowCard

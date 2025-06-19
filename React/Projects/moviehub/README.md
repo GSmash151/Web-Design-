@@ -352,3 +352,5 @@ After editing `useMovies.ts` file create a `src/components/ui/MovieCard.tsx` fil
 ```bash
 npx shadcn@latest add card
 ```
+After creating the movie list and tv show list go to genres list
+--- 

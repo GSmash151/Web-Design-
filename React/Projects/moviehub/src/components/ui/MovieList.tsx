@@ -5,7 +5,7 @@ import MoviesCard from "./MoviesCard";
 // Component: MovieList
 // Description: Displays a list of movies fetched from the API.
 const MovieList = () => {
-    const { movieList } = useMovieList(); 
+    const { movieList } = useMovieList();  
     console.log(movieList);
   return (
     <div className="p-3 mb-4">

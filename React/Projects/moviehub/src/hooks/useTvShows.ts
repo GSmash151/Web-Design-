@@ -3,19 +3,20 @@ import apiClients from "../services/api-clients";
 import { useEffect,useState } from "react";
 
 export interface TvShowResult {
-    adult: boolean;
-    id: number; 
-    original_name: string;
-    original_language: string;
-    overview: string;
-    backdrop_path: string;  
-    poster_path: string;
-    name?: string; 
+    adult : boolean;
+    id : number;
+    original_language : string;
+    original_title : string;
+    title : string;
+    backdrop_path : string;
+    poster_path : string;
+    overview : string;
+    name?: string;
 }// Optional, in case the API returns it
 
 const useTvShows = () => {
     // Function to fetch TV shows
-    const [tvShows, setTvShows] = useState<TvShowResult[]>([]);
+    const [tvShowList, setTvShows] = useState<TvShowResult[]>([]);
     const fetchTvShows = async () => {
         try {
             const res = await apiClients.get('discover/tv');
@@ -32,7 +33,7 @@ const useTvShows = () => {
         fetchTvShows();
     }, []);
     // Return the list of TV shows
-    return { tvShows };
+    return { tvShowList };
 }
 
 // Export the custom hook
