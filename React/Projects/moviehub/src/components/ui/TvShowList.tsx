@@ -1,9 +1,12 @@
-// Imports: 
+import useTvShows from "../../hooks/useTvShows"
+
 
 const TvShowList = () => {
+  const {tvShows} = useTvShows();
+  console.log(tvShows)
   return (
     <div>
-      TV Show List
+      Tv Shows List
     </div>
   )
 }

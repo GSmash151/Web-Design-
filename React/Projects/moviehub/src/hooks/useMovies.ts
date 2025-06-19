@@ -33,7 +33,7 @@ const useMovieList = () => {
         } catch (error) {
 
         }
-    };
+    }; 
 
     useEffect(() => {
         fetchMovieList();
