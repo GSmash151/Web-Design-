@@ -1,4 +1,5 @@
 import logo from "../../assets/images/logo.png";
+import Genres from "./Genres";
 import { Input } from "./input";
 import { Link } from "react-router-dom";
 
@@ -20,7 +21,9 @@ export const Navbar = () => {
         </form>
 
         <div className="hidden md:flex gap-6 items-center text-gray-700 text-base font-medium">
-          <div className="hover:text-blue-500 cursor-pointer transition-colors">Action</div>
+          <div className="hover:text-blue-500 cursor-pointer transition-colors">
+            <Genres />
+          </div>
           <Link to="/movies" className="hover:text-blue-500 transition-colors">
             Movies
           </Link>

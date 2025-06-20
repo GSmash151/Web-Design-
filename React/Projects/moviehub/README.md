@@ -354,3 +354,11 @@ npx shadcn@latest add card
 ```
 After creating the movie list and tv show list go to genres list
 --- 
+
+#### Create src/components/ui/Genres.tsx file
+- Install DropDownMenu from (https://ui.shadcn.com/docs/components/dropdown-menu)
+```bash
+npx shadcn@latest add dropdown-menu
+```
+
+- Create a src/context folder then src/context/genres.context.tsx

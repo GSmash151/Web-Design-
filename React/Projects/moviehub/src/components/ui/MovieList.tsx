@@ -1,11 +1,14 @@
 //Imports:
+import { useContext } from "react";
 import useMovieList from "../../hooks/useMovies"
 import MoviesCard from "./MoviesCard";
+import { GenresContext } from "../../context/genres.context";
 
 // Component: MovieList
 // Description: Displays a list of movies fetched from the API.
 const MovieList = () => {
-    const { movieList } = useMovieList();  
+    const {genres} = useContext(GenresContext)
+    const { movieList } = useMovieList(genres);  
     console.log(movieList);
   return (
     <div className="p-3 mb-4">

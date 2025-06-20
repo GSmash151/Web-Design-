@@ -20,24 +20,27 @@ export interface MovieResult {
 
 // Custom hook to fetch movie list
 // This hook will return the movie list and a function to fetch it
-const useMovieList = () => {
+const useMovieList = (genres?: number | null  ) => {
     // State to hold the movie list
     const [movieList, setMovieList] = useState<MovieResult[]>();
 
     // Function to fetch movie list
     const fetchMovieList = async () => {
         try { 
-            const res = await apiClients.get('discover/movie');
+            const res = await apiClients.get('discover/movie', {
+                params: {
+                  with_genres: genres,
+                },
+            });
             setMovieList(res.data.results);
             console.log(res.data.results);
-        } catch (error) {
-
-        }
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        } catch (error) { /* empty */ }
     }; 
 
     useEffect(() => {
         fetchMovieList();
-    }, []); 
+    }, [genres]); 
 
     return {movieList};
     
