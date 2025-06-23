@@ -203,7 +203,7 @@ You may now add components.
 ```
 `Add Components`
 - You can now start adding components to your project.
-```bash
+```bash 
 npx shadcn@latest add button
 ```
 
