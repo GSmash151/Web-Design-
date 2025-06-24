@@ -27,7 +27,7 @@ const Header = () => {
   };
 
   return (
-    <header className="fixed top-0 w-full h-16 bg-neutral-600 bg-opacity-75 shadow-md z-50"> {/* Added z-50 for layering */}
+    <header className="fixed top-0 w-full h-16 bg-neutral-600 bg-opacity-75 shadow-md z-40"> {/* Added z-50 for layering */}
       <div className="container mx-auto px-4 flex items-center h-full">
         <Link to={"/"}>
           <img src={logo} alt="logo" width={120} />
@@ -60,7 +60,7 @@ const Header = () => {
               <IoSearchSharp />
             </button>
           </form>
-          <div className="w-8 h-8 rounded-full overflow-hidden cursor-pointer active:scale-50 transition-all">
+          <div className="w-8 h-8 rounded-full overflow-hidden cursor-pointer active:scale-50 transition-all sm:block">
             <img src={userIcon} alt="userIcon" className="w-full h-full object-cover" /> {/* Made image cover the div */}
           </div>
         </div>
