@@ -7,15 +7,9 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { RouterProvider } from "react-router-dom";
 import router from "./routes";
-import axios from "axios";
+// REMOVED: import axios from "axios"; // No longer needed for global config here
 import { store } from './store/store'
 import { Provider } from 'react-redux'
-
-/** Axios Setup */
-axios.defaults.baseURL = "https://api.themoviedb.org/3";
-
-// CRITICAL FIX: Changed 'Bear' to 'Bearer'
-axios.defaults.headers.common['Authorization'] = `Bearer ${process.env.REACT_APP_ACCESS_TOKEN}`;
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
