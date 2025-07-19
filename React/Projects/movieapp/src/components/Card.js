@@ -1,6 +1,7 @@
 // src/components/Card.js
 import React from "react";
 import { Link } from "react-router-dom";
+import moment from "moment/moment";
 
 const Card = ({ data, mediaType }) => {
   const type = mediaType || data.media_type;
@@ -50,18 +51,18 @@ const Card = ({ data, mediaType }) => {
     return <div className="flex items-center gap-0.5">{stars}</div>;
   };
 
-  const releaseDate = data.release_date || data.first_air_date;
-  const year = releaseDate ? new Date(releaseDate).getFullYear() : "N/A";
+  //const releaseDate = data.release_date || data.first_air_date;
+  //const year = releaseDate ? new Date(releaseDate).getFullYear() : "N/A";
 
   return (
-    <Link to={`/${type}/${data.id}`}>
-      <div className="bg-neutral-800 rounded-md overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:scale-105 cursor-pointer flex flex-col h-full">
+    <Link to={`/${data.media_type}/${data.id}`}>
+      <div className="w-full rounded-3xl bg-neutral-800 shadow-lg hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105 cursor-pointer flex flex-col">
         {/* Image Container with 2:3 Aspect Ratio for Uniform Height */}
-        <div className="relative w-full pb-[150%] bg-neutral-700">
+        <div className="relative rounded-xl min-w-[230px] max-w-[230px]h-80 pb-[150%] bg-neutral-700 overflow-hidden">
           <img
             src={imageUrl}
             alt={data.title || data.name}
-            className="absolute inset-0 w-full h-full object-cover rounded-t-lg"
+            className="absolute inset-0 w-full h-full object-cover"
             onError={(e) => {
               e.target.onerror = null;
               e.target.src =
@@ -87,12 +88,14 @@ const Card = ({ data, mediaType }) => {
 
           <div className="absolute bottom-0 w-full h-12 p-2  backdrop-blur-xl bg-black/20 flex justify-between overflow-hidden">
             {/* Release Date - Bottom Left Absolute */}
-            <div className="left-2 p-2 bg-black rounded-xl text-white text-xs font-semibold">
-              {year}
+            <div className="text-xs text-white font-semibold left-2 p-2">
+              <p className="">
+                {moment(data.release_date).format("MMM Do YYYY")}
+              </p>
             </div>
 
             {/* Video Quality - Bottom Right Absolute */}
-            <div className="right-2 p-2  bg-black rounded-xl text-white text-xs font-semibold">
+            <div className="bg-yellow-700 rounded-xl text-white text-xs font-semibold right-2 p-2 ">
               {getVideoQuality(data.vote_average)}
             </div>
           </div>

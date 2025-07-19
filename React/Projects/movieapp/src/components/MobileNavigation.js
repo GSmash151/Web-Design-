@@ -1,36 +1,39 @@
 // src/components/MobileNavigation.js
 import React from 'react';
-import { mobileNavigation } from '../contents/navigation'; // This is the key line
+import { mobileNavigation } from '../contents/navigation';
 import { NavLink } from 'react-router-dom';
 
 const MobileNavigation = () => {
-  // It's a good practice to add a defensive check
-  // in case mobileNavigation somehow ends up undefined or not an array.
-  if (!mobileNavigation || !Array.isArray(mobileNavigation)) {
-    console.error("mobileNavigation is not an array or is undefined.");
-    return null; // Or render a fallback UI
+  // Defensive check and fallback UI
+  if (!Array.isArray(mobileNavigation) || mobileNavigation.length === 0) {
+    console.error("mobileNavigation is not a valid array or is empty.");
+    return (
+      <section className="lg:hidden h-14 bg-neutral-800 fixed bottom-0 w-full flex items-center justify-center text-white text-sm">
+        Navigation unavailable
+      </section>
+    );
   }
 
   return (
-    <section className='lg:hidden h-14 bg-neutral-600 bg-opacity-40 fixed bottom-0 w-full'>
-      <div className='flex justify-around h-full items-center text-neutral-400'>
+    <section className="lg:hidden h-14 bg-neutral-600 bg-opacity-40 fixed bottom-0 w-full z-40 backdrop-blur">
+      <nav className="flex justify-around h-full items-center text-neutral-400">
         {mobileNavigation.map((nav) => (
           <NavLink
             key={nav.label}
             to={nav.href}
+            title={nav.label}
+            aria-label={nav.label}
             className={({ isActive }) =>
-              `flex flex-col items-center gap-1 ${
-                isActive && 'text-neutral-100'
+              `flex flex-col items-center gap-1 transition-colors duration-200 ${
+                isActive ? 'text-neutral-100' : ''
               }`
             }
           >
-            <div className='text-2xl'>
-              {nav.icon}
-            </div>
-            <p className='text-sm'>{nav.label}</p>
+            <div className="text-2xl">{nav.icon}</div>
+            <p className="text-xs">{nav.label}</p>
           </NavLink>
         ))}
-      </div>
+      </nav>
     </section>
   );
 };
