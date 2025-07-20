@@ -31,6 +31,7 @@ INSTALLED_APPS = [
     # My apps
     'core',
     'item',
+    'dashboard',
 ]
 
 MIDDLEWARE = [
