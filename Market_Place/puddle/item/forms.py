@@ -1,5 +1,3 @@
-from dataclasses import fields
-from tkinter import Widget
 from django import forms
 from .models import Item
 
@@ -16,10 +14,27 @@ class NewItemForm(forms.ModelForm):
             "price",
             "image",
         )
-        Widgets = {
+        widgets = {
             "category": forms.Select(attrs={"class": INPUT_CLASSES}),
             "name": forms.TextInput(attrs={"class": INPUT_CLASSES}),
             "description": forms.Textarea(attrs={"class": INPUT_CLASSES}),
+            "price": forms.TextInput(attrs={"class": INPUT_CLASSES}),
+            "image": forms.FileInput(attrs={"class": INPUT_CLASSES}),
+        }
+
+class EditItemForm(forms.ModelForm):
+    class Meta:
+        model = Item
+        fields = (
+            "category",
+            "name",
+            "price",
+            "image",
+            "is_sold"
+        )
+        widgets = {
+            "category": forms.Select(attrs={"class": INPUT_CLASSES}),
+            "name": forms.TextInput(attrs={"class": INPUT_CLASSES}),
             "price": forms.TextInput(attrs={"class": INPUT_CLASSES}),
             "image": forms.FileInput(attrs={"class": INPUT_CLASSES}),
         }

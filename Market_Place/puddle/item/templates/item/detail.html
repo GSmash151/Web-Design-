@@ -28,7 +28,7 @@
       <div class="mt-6 p-6 bg-white rounded-xl">
         <p>This is your item!</p> 
         
-        <a href="#" class="inline-block mt-6 px-6 py-3 text-lg font-semibold bg-teal-500 hover:bg-teal-700 text-white rounded-xl cursor-pointer">Edit</a> 
+        <a href="{% url 'item:edit' item.id%}" class="inline-block mt-6 px-6 py-3 text-lg font-semibold bg-teal-500 hover:bg-teal-700 text-white rounded-xl cursor-pointer">Edit</a> 
         <a href="{% url 'item:delete' item.id %}" class="inline-block mt-6 px-6 py-3 text-lg font-semibold bg-red-500 hover:bg-red-700 text-white rounded-xl cursor-pointer">Delete</a>
       </div>      
     {% else %}        
@@ -60,3 +60,4 @@
   </div>
 {% endblock content %}
   
+https://youtu.be/ZxMB6Njs3ck?t=6002
