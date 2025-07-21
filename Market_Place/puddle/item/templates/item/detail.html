@@ -32,7 +32,7 @@
         <a href="{% url 'item:delete' item.id %}" class="inline-block mt-6 px-6 py-3 text-lg font-semibold bg-red-500 hover:bg-red-700 text-white rounded-xl cursor-pointer">Delete</a>
       </div>      
     {% else %}        
-      <a href="#" class="inline-block mt-6 px-6 py-3 text-lg font-semibold bg-teal-500 rounded-xl text-white hover:bg-teal-700 cursor-pointer">
+      <a href="{% url 'conversation:new' item.id %}" class="inline-block mt-6 px-6 py-3 text-lg font-semibold bg-teal-500 rounded-xl text-white hover:bg-teal-700 cursor-pointer">
         Contact Seller
       </a>
     {% endif %}
@@ -60,4 +60,3 @@
   </div>
 {% endblock content %}
   
-https://youtu.be/ZxMB6Njs3ck?t=6002

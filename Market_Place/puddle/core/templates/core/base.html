@@ -6,10 +6,11 @@
 
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <title>
+
       {% block title %}
-        
-      {% endblock title %}
         Puddle
+      {% endblock title %}
+
     </title>
   </head>
 
@@ -23,12 +24,13 @@
           
           
           {% if request.user.is_authenticated %}
-            <a href="" class="px-6 py-3 text-lg font-semibold bg-teal-500 text-white rounded-xl hover:bg-teal-700 cursor-pointer">Inbox</a>
+            <a href="{% url 'conversation:inbox' %}" class="px-6 py-3 text-lg font-semibold bg-teal-500 text-white rounded-xl hover:bg-teal-700 cursor-pointer">Inbox</a>
             <a href="{% url 'dashboard:index' %}" class="px-6 py-3 text-lg font-semibold bg-gray-500 text-white rounded-xl hover:bg-gray-700 cursor-pointer">Dashboard</a>                    
           {% else %}
             <a href="{% url 'core:signup'%}" class="px-6 py-3 text-lg font-semibold bg-teal-500 text-white rounded-xl hover:bg-teal-700 cursor-pointer">Sign Up</a>
             <a href="{% url 'core:login'%}" class="px-6 py-3 text-lg font-semibold bg-gray-500 text-white rounded-xl hover:bg-gray-700 cursor-pointer">Login</a>            
           {% endif %}
+          
       </div>
     </nav>
       
