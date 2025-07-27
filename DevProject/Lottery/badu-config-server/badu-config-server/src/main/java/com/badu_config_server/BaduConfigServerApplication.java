@@ -1,13 +1,13 @@
-package com.badu.config_server;
+package com.badu_config_server;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ConfigServerApplication {
+public class BaduConfigServerApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ConfigServerApplication.class, args);
+		SpringApplication.run(BaduConfigServerApplication.class, args);
 	}
 
 }
