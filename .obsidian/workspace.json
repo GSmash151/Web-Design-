@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "React/NPX Create.md",
+                "file": "Spring/Spring_Framework/Introduction to Spring Framework.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "NPX Create"
+              "title": "Introduction to Spring Framework"
             }
           }
         ]
@@ -78,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "37ad20cd9b9b28b6",
@@ -172,7 +171,19 @@
   },
   "active": "313e2221554bdc92",
   "lastOpenFiles": [
-    "React/React_Structure/Project Structure.md",
-    "React/NPX Create.md"
+    "Spring/Terminal.md",
+    "Spring/Terminal 1.md",
+    "Spring/Spring_Framework/Introduction to Spring Framework.md",
+    "Images/WebApps/Spring-Framework_.webp",
+    "Images/WebApps/Unconfirmed 283540.crdownload",
+    "Images/WebApps/Key-features-of-Spring-Framework_.webp",
+    "Images/WebApps/Unconfirmed 978606.crdownload",
+    "Images/WebApps",
+    "Images/New folder",
+    "React/NPX Create.md",
+    "Spring/Spring_Boot",
+    "Spring/Spring_Framework",
+    "Spring",
+    "React/React_Structure/Project Structure.md"
   ]
 }
