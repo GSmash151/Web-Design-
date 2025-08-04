@@ -78,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "37ad20cd9b9b28b6",
@@ -171,25 +172,30 @@
   },
   "active": "672f4a0eb94cbc8d",
   "lastOpenFiles": [
+    "Terraform/aws-intance/Sis_Lessons/instance-2/terraform.tfstate.backup",
+    "Terraform/aws-intance/Youtube_Lessons/project/app/terraform/output.tf",
+    "Terraform/aws-intance/Youtube_Lessons/project/app/public/images/profile_pic_1.jpg",
+    "Terraform/aws-intance/Youtube_Lessons/02_state/example1.txt",
+    "Terraform/aws-intance/Youtube_Lessons/02_state/example2.txt",
+    "Terraform/aws-intance/Youtube_Lessons/02_state/terraform.tfstate.backup",
+    "Terraform/aws-intance/Youtube_Lessons/02_state/sensitive.md",
+    "Terraform/aws-intance/Youtube_Lessons/02_state/terraform.tfstate",
+    "Terraform/aws-intance/Youtube_Lessons/02_state/main.tf",
+    "Terraform/aws-intance/Youtube_Lessons/02_state/provider.tf",
+    "Terraform/aws-intance/Youtube_Lessons/02_state",
+    "Terraform/aws-intance/Youtube_Lessons/01_basic/example1-2.txt",
+    "Terraform/aws-intance/Youtube_Lessons/01_basic/example1-1.txt",
+    "Terraform/aws-intance/Sis_Lessons/instance-2/README.md",
     "Terraform/aws-intance/instance-2/README.md",
     "Terraform/Terraform Commands Cheat Sheet.md",
     "Terraform/aws-intance/instance-2/Instance-2_Explained.md",
     "Terraform/aws-intance/instance-2/Instance Explained.md",
-    "Terraform/aws-intance/instance-2/Unconfirmed 734343.crdownload",
     "Spring/Spring_Framework/Introduction to Spring Framework.md",
-    "Terraform/Untitled",
     "Spring/Terminal.md",
     "Spring/Terminal 1.md",
     "Images/WebApps/Spring-Framework_.webp",
-    "Images/WebApps/Unconfirmed 283540.crdownload",
     "Images/WebApps/Key-features-of-Spring-Framework_.webp",
-    "Images/WebApps/Unconfirmed 978606.crdownload",
-    "Images/WebApps",
-    "Images/New folder",
     "React/NPX Create.md",
-    "Spring/Spring_Boot",
-    "Spring/Spring_Framework",
-    "Spring",
     "React/React_Structure/Project Structure.md"
   ]
 }
