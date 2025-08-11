@@ -1,6 +1,6 @@
 variable "name" {
   type    = string
-  default = "Petclinic_Microservices_Apps"
+  default = "Petclinic_Microservices_App01"
 }
 
 variable "ami" {

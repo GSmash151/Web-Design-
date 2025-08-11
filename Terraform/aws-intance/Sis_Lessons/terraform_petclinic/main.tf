@@ -5,7 +5,7 @@ module "vpc" {
 
 module "security_group" {
   source        = "./modules/security_group"
-  petclinic_vpc = "vpc-08a37125a882814c3"
+  petclinic_vpc = "petclinic_vpc"
   vpc_id        = module.vpc.vpc_id
   name          = "petclinic_sg"
   ingress_rules = [
@@ -21,6 +21,55 @@ module "security_group" {
       from_port   = 80
       to_port     = 80
       protocol    = "tcp"
+      cidr_blocks = ["0.0.0.0/0"]
+    }, 
+    {
+      description = "Config Server"
+      from_port = 8888
+      to_port = 8888
+      protocol = "tcp"
+      cidr_blocks = ["0.0.0.0/0"]
+    },
+    {
+      description = "Api Gateway"
+      from_port = 8080
+      to_port = 8080
+      protocol = "tcp"
+      cidr_blocks = ["0.0.0.0/0"]
+    },
+    {
+      description = "Admin Server"
+      from_port = 9090
+      to_port = 9090
+      protocol = "tcp"
+      cidr_blocks = ["0.0.0.0/0"]
+    },
+    {
+      description = "Discovery Server"
+      from_port = 8761
+      to_port = 8761
+      protocol = "tcp"
+      cidr_blocks = ["0.0.0.0/0"]
+    },
+    {
+     description = "Zipkin"
+      from_port = 9411  
+      to_port = 9411
+      protocol = "tcp"
+      cidr_blocks = ["0.0.0.0/0"]
+    },
+    {
+      description = "Grafana Dashboards"
+      from_port = 3000
+      to_port = 3000
+      protocol = "tcp"
+      cidr_blocks = ["0.0.0.0/0"]
+    },
+    {
+      description = "Prometheus"
+      from_port = 9091
+      to_port = 9091
+      protocol = "tcp"
       cidr_blocks = ["0.0.0.0/0"]
     }
   ]
