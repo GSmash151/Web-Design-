@@ -4,12 +4,12 @@ module "ec2_instance" {
 
 module "key_name" {
   source = "./modules/key_pair"
-  key_name = module.key_pair.key_name
+  key_name = "aws_key_pair"
 }
 
-module "aws_security_group" {
+module "security_group" {
   source = "./modules/security"
-  sg_name = module.security_group.sg_name 
+  sg_name = module.sg_name
 }
 
 module "aws_vpc" {
