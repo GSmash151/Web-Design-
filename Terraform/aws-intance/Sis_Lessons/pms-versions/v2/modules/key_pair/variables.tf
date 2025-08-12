@@ -1,4 +1,6 @@
+# modules\key_pair\variables.tf
 variable "key_name" {
-  description = "Desired name of AWS key pair"
+  description = "Name of the SSH key pair"
   type        = string
 }
+
