@@ -1,7 +1,6 @@
 variable "sg_name" {
   description = "Name of the security group"
   type        = string
-  default     = "petclinic_sg"
 }
 
 variable "sg_ingress_rules" {
@@ -46,4 +45,10 @@ variable "sg_egress_rules" {
     protocol    = "-1"
     cidr_blocks = ["0.0.0.0/0"]
   }]
+}
+
+variable "cidr_blocks" {
+  description = "CIDR block"
+  type        = list(string)
+  default     = ["0.0.0.0/0"]
 }
