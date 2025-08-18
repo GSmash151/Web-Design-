@@ -7,7 +7,7 @@ module "key_pair" {
 
 module "security_group" {
   source = "./modules/security_group"
-  vpc_id = var.petclinic_vpc_id
+  petclinic_vpc = var.petclinic_vpc_id
   ingress_rules = [
     {
       description = "SSH"

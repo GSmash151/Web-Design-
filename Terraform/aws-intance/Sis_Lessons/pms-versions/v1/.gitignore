@@ -1,5 +1,0 @@
-.env
-*.pem
-*.tfvars
-.terraform*
-
