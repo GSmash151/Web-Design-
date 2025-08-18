@@ -4,6 +4,11 @@ variable "aws_region" {
   type        = string
 }
 
+variable "vpc_cidr_block" {
+  description = "The CIDR block for the VPC"
+  type        = string
+}
+
 variable "project_name" {
   description = "The Project Name"
   type        = string
@@ -13,6 +18,7 @@ variable "vpc_id" {
   description = "The VPC ID"
   type        = string
 }
+
 
 variable "key_name" {
   description = "The Key pair name"
@@ -40,9 +46,14 @@ variable "instance_type" {
   type        = string
 }
 
-variable "subnet_id" {
+variable "public_subnet_cidr" {
   description = "The ID of the subnet where the instance will be launched"
   type        = string
+}
+
+variable "private_subnet_cidr" {
+  description = "The Id of the private subnet"
+  type = string
 }
 
 variable "security_group_id" {
@@ -50,6 +61,20 @@ variable "security_group_id" {
   type        = list(string)
 }
 
+variable "db_subnet_cidr" {
+  description = "The CIDR block for the database subnet"
+  type        = string
+}
+
+variable "public_subnet_id" {
+  description = "The ID of the public subnet"
+  type        = string
+}
+
+variable "private_subnet_id" {
+  description = "The ID of the private subnet"
+  type        = string
+}
 
 
 

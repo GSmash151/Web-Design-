@@ -1,6 +1,11 @@
 module "vpc" {
   source       = "../modules/vpc"
   project_name = var.project_name
+  vpc_cidr_block = var.vpc_cidr_block
+  public_subnet_cidr = var.public_subnet_id
+  private_subnet_cidr = var.private_subnet_id
+  db_subnet_cidr = var.db_subnet_cidr
+
 }
 
 module "security_group" {
